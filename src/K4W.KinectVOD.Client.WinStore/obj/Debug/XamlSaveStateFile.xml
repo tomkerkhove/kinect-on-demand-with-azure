@@ -1,0 +1,10 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.playerframework.xaml.adaptive\2.0.0.0\references\commonconfiguration\x64\microsoft.media.adaptivestreaming.helper.winmd" HashGuid="49d24cfa-7fbd-6dd6-b8fa-208464315b1d" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.media.adaptivestreamingclient\1.0\references\commonconfiguration\neutral\microsoft.media.adaptivestreaming.winmd" HashGuid="4e3af2c7-1c53-bbb5-5b7c-4744b18c25ee" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.playerframework.xaml.adaptive\2.0.0.0\references\commonconfiguration\x64\microsoft.playerframework.adaptive.dll" HashGuid="395e2672-4c20-ae21-1fe7-c2b978873c20" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.playerframework.xaml\2.0.0.0\references\commonconfiguration\neutral\microsoft.playerframework.dll" HashGuid="0eb31395-6948-b473-5dc8-741325de74cf" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windows\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
+    <ReferenceAssembly PathName="c:\users\tom\documents\github\giik-kinectondemandwithazure\src\packages\windowsazure.messaging.managed.0.1.7.8\lib\netcore45\microsoft.windowsazure.messaging.managed.dll" HashGuid="fc743b07-0e25-3384-ff82-3dec52ff762a" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>

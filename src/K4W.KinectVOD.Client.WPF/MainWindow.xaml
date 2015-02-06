@@ -1,0 +1,50 @@
+﻿<Window x:Class="K4W.KinectVOD.Client.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="Kinecting for Windows - Video On-Demand" Height="800" Width="975" ResizeMode="NoResize" Icon="Resources/icon.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120px" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="540"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="10" Orientation="Horizontal">
+            <Image Source="Resources/k4w.png" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="100" />
+            <TextBlock Text="Second Generation Kinect - Video On-Demand" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="20,0,0,0" Foreground="#FF2A2A2A" />
+        </StackPanel>
+
+        <!-- Seperator -->
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="4" Fill="#FF2A2A2A" />
+
+        <!-- Video Caption & Status -->
+        <Label Content="Video Caption" Margin="0,0,5,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="VideoCaption" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalContentAlignment="Left" MaxLines="1" MaxLength="40" Grid.Row="2" Grid.Column="1"/>
+
+        <!-- Video Status -->
+        <Label Content="Current Status" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="2" Grid.Row="2"/>
+        <Label x:Name="Status" Content="Idle" Margin="0,0,5,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" FontStyle="Italic"/>
+
+        <!-- Kinect Camera -->
+        <Image x:Name="KinectCamera" Height="540" Margin="5,0" Width="960" Grid.Row="3" Grid.ColumnSpan="4" />
+        <Image x:Name="KinectUnavailable" Source="Assets/KinectUnavailable.png" Height="540" Margin="5,0" Width="960" Grid.Row="3" Grid.ColumnSpan="4" Visibility="Collapsed" />
+
+        <!-- Temporary folder -->
+        <Label Content="Temporary Folder" Margin="0,0,5,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold" HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Center"/>
+        <TextBox x:Name="TemporaryFolder" Grid.Column="1" Margin="0,0,5,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="3" Text="C:\Temp\RenderFolder\" />
+
+        <!-- Recording Actions -->
+        <Button x:Name="StartRecordingButton" Content="Start Recording" Margin="5" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Button x:Name="StopRecordingButton" Content="Stop Recording" IsEnabled="False" Margin="5" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="2"/>
+    </Grid>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="K4W.KinectVOD.Client.WinStore.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:conv="using:K4W.KinectVOD.Client.WinStore.Converters"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <CollectionViewSource x:Name="itemsViewSource" Source="{Binding Items}"/>
+        <conv:CollectionToVisibilityConverter x:Name="CollectionToVisibilityConverter" />
+        <conv:StringFormatConverter x:Key="StringFormatConverter" />
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <StackPanel Margin="40,0,0,0" Orientation="Horizontal">
+            <Image Margin="0,20,20,20" Source="Assets/k4w-logo.png" />
+            <TextBlock Text="Kinect for Windows - Video On-Demand" VerticalAlignment="Center" Margin="0" Foreground="#FF532B8D" FontSize="50" FontFamily="Open Sans" />
+        </StackPanel>
+
+        <!-- No recordings available -->
+        <TextBlock Text="No recordings available." Grid.Row="1" Foreground="Black" FontSize="20" FontFamily="Open Sans" Margin="40,0,0,0"
+                   Visibility="{Binding Items, Converter={StaticResource CollectionToVisibilityConverter}}"/>
+
+        <!-- Recording list -->
+        <GridView
+            AutomationProperties.AutomationId="ItemsGridView"
+            AutomationProperties.Name="Items"
+            TabIndex="1"
+            Grid.RowSpan="2"
+            Padding="40,136,116,46"
+            ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
+            SelectionMode="None"
+            IsSwipeEnabled="false"
+            ItemClick="OnItemClick"
+            Visibility="{Binding Items, ConverterParameter=ShowOnItemsPresent, Converter={StaticResource CollectionToVisibilityConverter}}" IsItemClickEnabled="True" >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Left" Width="250" Background="#A68BC902" Height="75">
+                    	<Grid.RowDefinitions>
+                    		<RowDefinition Height="2*"/>
+                    		<RowDefinition/>
+                    	</Grid.RowDefinitions>
+                        <Viewbox Margin="15,0">
+                        	<TextBlock Text="{Binding Caption}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" FontWeight="SemiBold" Height="50" Width="220"/>
+                        </Viewbox>
+                        <TextBlock Text="{Binding RecordingStamp, ConverterParameter=Recorded on \{0:dd MMM yyyy\}, Converter={StaticResource StringFormatConverter}}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Margin="15,0,15,0" FontWeight="SemiBold" Grid.Row="1" FontStyle="Italic" HorizontalAlignment="Right" FontSize="12" VerticalAlignment="Top"/>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+    </Grid>
+</Page>
