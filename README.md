@@ -14,7 +14,7 @@ This tutorial uses the following technologies -
 This tutorial is based on the Kinect for Windows Gen II SDK v2.0.1410.19 NuGet Package.
 
 ## Template ##
-In order to follow this tutorial I've created a template that contains a **Kinect for Windows application** that displays the camera and a **basic Windows Store App**. You can download the template [here](http://github.com/KinectingForWindows/G2KVOD/tree/Template "Tutorial Template").
+In order to follow this tutorial I've created a template that contains a **Kinect for Windows application** that displays the camera and a **basic Windows Store App**. You can download the template [here](https://github.com/KinectingForWindows/GIIK-KinectOnDemandWithAzure/tree/Template "Tutorial Template").
 
 ## Scenario ##
 In this scenario we will develop a Kinect application that enables the user to record a video with a self-describing caption. All the viewers will be notified that there is a new video available so they can watch it on-demand.
