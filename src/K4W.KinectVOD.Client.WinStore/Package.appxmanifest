@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="869469c6-70c2-4596-8573-8fcf0cd2e08e" Publisher="CN=Tom" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>K4W.KinectVOD.Client.WinStore</DisplayName>
+    <PublisherDisplayName>Tom</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="K4W.KinectVOD.Client.WinStore.App">
+      <m2:VisualElements DisplayName="Kinect for Windows - On-Demand" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Kinect - Video On-Demand client" ForegroundText="dark" BackgroundColor="#FFFFFF" ToastCapable="true">
+        <m2:DefaultTile ShortName="New video">
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#FFFFFF" />
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
