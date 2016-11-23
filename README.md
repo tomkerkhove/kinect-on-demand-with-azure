@@ -8,8 +8,6 @@ This tutorial uses the following technologies -
 - **Microsoft Azure Notification Hubs**
 - **Windows 8.1 Store Apps**
 
-![K4W logo](http://www.kinectingforwindows.com/wp-content/themes/twentyten/images/headers/logo.jpg)
-
 ## Disclaimer
 This tutorial is based on the Kinect for Windows Gen II SDK v2.0.1410.19 NuGet Package.
 
@@ -25,11 +23,7 @@ Before I start with the tutorial, let me quickly introduce some of the services 
 ### Kinect client ###
 We will develop a WPF client that will orchestrate the communication between the Kinect sensor & the cloud. The WPF client enables the users to start & stop the recording and assign a self-describing caption for the viewers. Upon recording we will save each frame as a JPG-image and render it into an AVI-video at the end. Important to know is that the recording will automatically stop when the Kinect sensor becomes unavailable.
 
-![Kinect Client](http://www.kinectingforwindows.com/wp-content/uploads/2014/07/Demo-Scenario-Kinect.png)
-
 When the recording is done we will have a local video that we will upload as our raw Asset, encode it into MP4 & package it to a Smooth Stream for our viewers app. Last but not least we will send a notification to all our viewers that there is a new video available along with the stream URL & the specified caption
 
 ### Video Client ###
 The viewers will use a simple Windows Store App that will receive push notifications when a new video is ready. They can then use the stream URL and play the video in from Media Services. The stream URL will also be stored in the local storage so that the video can be watched again later on.
-
-![Kinect Client](http://www.kinectingforwindows.com/wp-content/uploads/2014/07/Demo-Scenario-Client.png)
